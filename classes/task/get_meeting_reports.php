@@ -292,7 +292,7 @@ class get_meeting_reports extends \core\task\scheduled_task {
         foreach ($enrolled as $user) {
             $name = strtoupper(fullname($user));
             $names[$user->id] = $name;
-            $emails[$user->id] = strtoupper($user->email);
+            $emails[$user->id] = strtoupper($user->alternatename);
         }
         return array($names, $emails);
     }
