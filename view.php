@@ -59,7 +59,7 @@ if (!is_null($zoom->alternative_hosts)) {
     $alternativehosts = explode(',', str_replace(';', ',', $zoom->alternative_hosts));
 }
 
-$userishost = ($zoomuserid === $zoom->host_id || in_array($USER->email, $alternativehosts));
+$userishost = ($zoomuserid === $zoom->host_id || in_array($USER->alternatename, $alternativehosts));
 
 $service = new mod_zoom_webservice();
 $hostuser = false;
