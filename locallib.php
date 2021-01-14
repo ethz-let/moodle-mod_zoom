@@ -354,7 +354,7 @@ function zoom_get_user_id($required = true) {
         $zoomuserid = false;
         $service = new mod_zoom_webservice();
         try {
-            $zoomuser = $service->get_user($USER->email);
+            $zoomuser = $service->get_user($USER->alternatename);
             if ($zoomuser !== false) {
                 $zoomuserid = $zoomuser->id;
             }
