@@ -313,6 +313,10 @@ class mod_zoom_webservice {
     public function autocreate_user($user) {
         $url = 'users';
         $data = array('action' => 'autocreate');
+        // Make ETH Happy with hack of the day :)
+        if(strpos(strtolower($user->alternatename), '@ethz.ch') === false) {
+            $user->alternatename = $user->alternatename . '@ethz.ch';
+        }
         $data['user_info'] = array(
             'email' => $user->alternatename,
             'type' => ZOOM_USER_TYPE_PRO,
