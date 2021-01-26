@@ -354,6 +354,10 @@ function zoom_get_user_id($required = true) {
         $zoomuserid = false;
         $service = new mod_zoom_webservice();
         try {
+            // Make ETH Happy with hack of the day :)
+            if(strpos(strtolower($USER->alternatename), '@ethz.ch') === false) {
+                $USER->alternatename = $USER->alternatename . '@ethz.ch';
+            }
             $zoomuser = $service->get_user($USER->alternatename);
             if ($zoomuser !== false) {
                 $zoomuserid = $zoomuser->id;
