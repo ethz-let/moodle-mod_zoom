@@ -40,10 +40,10 @@ if ($ADMIN->fulltree) {
         try {
             $service = new mod_zoom_webservice();
             // Make ETH Happy with hack of the day :)
-            if(strpos(strtolower($USER->alternatename), '@ethz.ch') === false) {
-                $USER->alternatename = $USER->alternatename . '@ethz.ch';
+            if(strpos(strtolower($USER->idnumber), '@ethz.ch') === false) {
+                $USER->idnumber = $USER->idnumber . '@ethz.ch';
             }
-            $service->get_user($USER->alternatename);
+            $service->get_user($USER->idnumber);
         } catch (moodle_exception $error) {
             $notifyclass = 'notifyproblem';
             $status = 'connectionfailed';
