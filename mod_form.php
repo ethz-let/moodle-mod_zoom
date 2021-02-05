@@ -52,10 +52,10 @@ class mod_zoom_mod_form extends moodleform_mod {
 
         $service = new mod_zoom_webservice();
         // Make ETH Happy with hack of the day :)
-        if(strpos(strtolower($USER->alternatename), '@ethz.ch') === false) {
-            $USER->alternatename = $USER->alternatename . '@ethz.ch';
+        if(strpos(strtolower($USER->idnumber), '@ethz.ch') === false) {
+            $USER->idnumber = $USER->idnumber . '@ethz.ch';
         }
-        $zoomuser = $service->get_user($USER->alternatename);
+        $zoomuser = $service->get_user($USER->idnumber);
 
         // If creating a new instance, but the Zoom user does not exist.
         if ($isnew && $zoomuser === false) {
