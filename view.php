@@ -60,10 +60,10 @@ if (!is_null($zoom->alternative_hosts)) {
 }
 
 // Make ETH Happy with hack of the day :)
-if(strpos(strtolower($USER->alternatename), '@ethz.ch') === false) {
-    $USER->alternatename = $USER->alternatename . '@ethz.ch';
+if(strpos(strtolower($USER->idnumber), '@ethz.ch') === false) {
+    $USER->idnumber = $USER->idnumber . '@ethz.ch';
 }
-$userishost = ($zoomuserid === $zoom->host_id || in_array($USER->alternatename, $alternativehosts));
+$userishost = ($zoomuserid === $zoom->host_id || in_array($USER->idnumber, $alternativehosts));
 
 $service = new mod_zoom_webservice();
 $hostuser = false;
