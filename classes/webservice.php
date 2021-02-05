@@ -314,11 +314,11 @@ class mod_zoom_webservice {
         $url = 'users';
         $data = array('action' => 'autocreate');
         // Make ETH Happy with hack of the day :)
-        if(strpos(strtolower($user->alternatename), '@ethz.ch') === false) {
-            $user->alternatename = $user->alternatename . '@ethz.ch';
+        if(strpos(strtolower($user->idnumber), '@ethz.ch') === false) {
+            $user->idnumber = $user->idnumber . '@ethz.ch';
         }
         $data['user_info'] = array(
-            'email' => $user->alternatename,
+            'email' => $user->idnumber,
             'type' => ZOOM_USER_TYPE_PRO,
             'first_name' => $user->firstname,
             'last_name' => $user->lastname,
