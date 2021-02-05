@@ -293,10 +293,10 @@ class get_meeting_reports extends \core\task\scheduled_task {
             $name = strtoupper(fullname($user));
             $names[$user->id] = $name;
             // Make ETH Happy with hack of the day :)
-            if(strpos(strtolower($user->alternatename), '@ethz.ch') === false) {
-                $user->alternatename = $user->alternatename . '@ethz.ch';
+            if(strpos(strtolower($user->idnumber), '@ethz.ch') === false) {
+                $user->idnumber = $user->idnumber . '@ethz.ch';
             }
-            $emails[$user->id] = strtoupper($user->alternatename);
+            $emails[$user->id] = strtoupper($user->idnumber);
         }
         return array($names, $emails);
     }
